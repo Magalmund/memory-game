@@ -42,9 +42,14 @@ export const useGameLogic = (cardValues) => {
     }, []);
 
     const handleCardClick = (card) => {
+
+        // Don't allow clicking if card is already flipped, matched
+
         if (card.isFlipped || card.isMatched || flippedCards.length === 2 || isLocked ) {
             return;
         }
+
+        // Update card flipped state
 
         const newCards = cards.map((c) => {
             if (c.id === card.id) {
@@ -58,6 +63,8 @@ export const useGameLogic = (cardValues) => {
 
         const newFlippedCards = [...flippedCards, card.id]
         setFlippedCards(newFlippedCards);
+
+        // Check for match if two cards are flipped
 
         if (flippedCards.length === 1) {
             setIsLocked(true);
@@ -78,6 +85,9 @@ export const useGameLogic = (cardValues) => {
                     setFlippedCards([]);
                 }, 500)
             } else {
+
+                // flip back card 1, card 2
+
                 setTimeout(() => {
                     const flippedCardsBack = newCards.map((c) => {
                         if (newFlippedCards.includes(c.id) || c.id === card.id) {
