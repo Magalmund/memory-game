@@ -6,6 +6,11 @@ The goal is simple: find all matching card pairs in the fewest possible moves.
 
 ---
 
+## 🌐 Live Demo
+[View live site](https://memory-game-magalmund.vercel.app/)
+
+---
+
 ## 🚀 Tech Stack
 
 - ⚛️ [React](https://react.dev/)
@@ -26,6 +31,7 @@ The goal is simple: find all matching card pairs in the fewest possible moves.
 - Restart functionality
 - Fully responsive layout
 
+---
 ---
 
 ## 🧠 Architecture
